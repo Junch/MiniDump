@@ -3,8 +3,11 @@
 
 #include "stdafx.h"
 #include "minidump.h"
-#include <gmock\gmock.h>
 
-TEST(minidump, hello){
+int _tmain(int argc, _TCHAR* argv[])
+{
 	initMiniDump();
+	_tsystem(_T("pause"));
+	return 0;
 }
+

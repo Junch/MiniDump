@@ -5,10 +5,7 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dump", "Dump\Dump.vcxproj", "{9C929942-F4C5-4DAA-97DC-0EBB6FDBDE21}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DumpTest", "DumpTest\DumpTest.vcxproj", "{42411FB3-2CE4-4433-955C-30D5CF147F6C}"
-	ProjectSection(ProjectDependencies) = postProject
-		{9C929942-F4C5-4DAA-97DC-0EBB6FDBDE21} = {9C929942-F4C5-4DAA-97DC-0EBB6FDBDE21}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestDump", "TestDump\TestDump.vcxproj", "{42411FB3-2CE4-4433-955C-30D5CF147F6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

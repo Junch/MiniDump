@@ -20,6 +20,10 @@ LONG WINAPI MyUnhandledExceptionFilter(struct _EXCEPTION_POINTERS* ExceptionInfo
 
 	CloseHandle(lhDumpFile);
 
+#ifdef _DEBUG
+	printf("OK\n");
+#endif
+
 	return EXCEPTION_EXECUTE_HANDLER;
 }
 

@@ -4,7 +4,8 @@
 #include "stdafx.h"
 #include "minidump.h"
 #include <stdexcept>
-#include "guard.h"
+#include <string>
+#include <fstream>
 
 void createCrash(){
 	throw std::runtime_error("Create a crash");
@@ -13,9 +14,6 @@ void createCrash(){
 int _tmain(int argc, _TCHAR* argv[])
 {
 	initMiniDump();
-    RAII::make_ScopeGuard([](){
-        printf("hello world\n");
-    });
 
     createCrash();
 

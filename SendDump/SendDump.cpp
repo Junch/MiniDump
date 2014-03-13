@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
     }
 
     SOCKET sock_id;
-    if ((sock_id = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+	if ((sock_id = socket(AF_INET, SOCK_STREAM, 0)) == SOCKET_ERROR) {
         perror("Create socket failed\n");
         exit(0);
     }

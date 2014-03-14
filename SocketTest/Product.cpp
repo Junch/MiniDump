@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <WinSock2.h>
+#include "Product.h"
 
 int writen(SOCKET fd, const void *vptr, size_t n)
 {

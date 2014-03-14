@@ -1,10 +1,12 @@
 #include <stdio.h>
-#include "hippomocks.h"
 #include <WinSock2.h>
+
 #include <gmock\gmock.h>
+#include "hippomocks.h"
+
+#include "Product.h"
 
 #pragma comment(lib, "Ws2_32.lib")
-extern int writen(SOCKET fd, const void *vptr, size_t n);
 
 TEST(SOCKET, socket){
 	MockRepository mocks;

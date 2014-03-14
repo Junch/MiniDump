@@ -40,3 +40,29 @@ TEST(SOCKET, writen_200characters_failing){
 	int ret = writen(1, buff, 200);
 	ASSERT_THAT(ret, testing::Eq(SOCKET_ERROR));
 }
+
+void mainfunc()
+{
+    SOCKET sock_id;
+    if ((sock_id = socket(AF_INET, SOCK_STREAM, 0)) == SOCKET_ERROR) {
+        perror("Create socket failed\n");
+        exit(1);
+    }
+}
+
+TEST(SOCKET, exit_if_socket_return_error){
+    MockRepository mocks;
+    mocks.ExpectCallFunc(socket).Return(SOCKET_ERROR);
+    mocks.ExpectCallFunc(exit).With(1).Throw(std::exception());
+    //  http://stackoverflow.com/questions/9805764/hippomocks-how-to-mock-win32-api-function
+    //  If you do tell HippoMocks to mock a function that shouldn't return,
+    //  the return code may not have been generated causing errors. Try throwing
+    //  a test-specific exception instead.
+
+    try {
+        mainfunc();
+    }
+    catch (...){
+
+    }
+}
